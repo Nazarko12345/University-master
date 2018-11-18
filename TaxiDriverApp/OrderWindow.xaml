@@ -1,0 +1,73 @@
+﻿<Window x:Class="TaxiDriverApp.OrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaxiDriverApp"
+        mc:Ignorable="d"
+        Title="Замовлення" Height="347.368" Width="275.187" Icon="taxi-icon.ico">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <GroupBox x:Name="clientGroupBox" Header="Інформація про клієнта" Grid.Row="0" Grid.Column="0" Margin="3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="clientName" Content="Ім'я клієнта: " Grid.Row="0" Grid.Column="0" />
+                <Label x:Name="clientNameDesc" Content="(відсутнє)" Grid.Row="0" Grid.Column="1" />
+                <Label x:Name="clientPhone" Content="Моб. клієнта: " Grid.Row="1" Grid.Column="0" />
+                <Label x:Name="clientPhoneDesc" Content="(відсутній)" Grid.Row="1" Grid.Column="1" />
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="roadGroupBox" Header="Інформація про маршут" Grid.Row="1" Grid.Column="0" Margin="3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="clientFrom" Content="Пункт відправлення:" Grid.Row="0" Grid.Column="0" Foreground="Red" />
+                <Label x:Name="clientFromDesc" Content="(немає)" Grid.Row="0" Grid.Column="1" Foreground="Red" />
+                <Label x:Name="clientTo" Content="Пункт призначення:" Grid.Row="1" Grid.Column="0" Foreground="Green" />
+                <Label x:Name="clientToDesc" Content="(немає)" Grid.Row="1" Grid.Column="1" Foreground="Green" />
+                <Label x:Name="clientTime" Content="Час відправлення: " Grid.Row="2" Grid.Column="0" Foreground="Orange"/>
+                <Label x:Name="clientTimeDesc" Content="(відсутній)" Grid.Row="2" Grid.Column="1" Foreground="Orange"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="workGroupBox" Header="Виконня замовлення" Grid.Row="2" Grid.Column="0" Margin="3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="timerLabel" Content="Час маршуту: " Grid.Row="0" Grid.Column="0" />
+                <Label x:Name="timerDesc" Content="00:00" Grid.Row="0" Grid.Column="1" Foreground="Green" FontWeight="Bold"/>
+                <Label x:Name="roadCost" Content="Вартість: " Grid.Row="1" Grid.Column="0" Foreground="Green" FontWeight="Bold"/>
+                <Label x:Name="roadCostDesc" Content="0 грн" Grid.Row="1" Grid.Column="1" Foreground="Green" FontWeight="Bold"/>
+                <Button x:Name="startRoad" Content="Розпочати маршут" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0" VerticalAlignment="Top" Margin="5" Click="startRoad_Click"/>
+                <Button x:Name="endRoad" Content="Завершити маршут" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Margin="5" Click="endRoad_Click"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
